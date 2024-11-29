@@ -650,7 +650,7 @@ class ConfigSubstitutionTest extends TestUtils {
     def useRelativeToSameFileWhenRelativized() {
         val child = parseObject("""foo=in child,bar=${foo}""")
 
-        val values = new java.util.HashMap[String, AbstractConfigValue]()
+        val values = new java.util.LinkedHashMap[String, AbstractConfigValue]()
 
         values.put("a", child.relativized(new Path("a")))
         // this "foo" should NOT be used.
@@ -666,7 +666,7 @@ class ConfigSubstitutionTest extends TestUtils {
         // here, "foo" is not defined in the child
         val child = parseObject("""bar=${foo}""")
 
-        val values = new java.util.HashMap[String, AbstractConfigValue]()
+        val values = new java.util.LinkedHashMap[String, AbstractConfigValue]()
 
         values.put("a", child.relativized(new Path("a")))
         // so this "foo" SHOULD be used
@@ -814,7 +814,7 @@ class ConfigSubstitutionTest extends TestUtils {
         // set to null. we want to be sure this blocks
         // lookup in the environment. i.e. if there is a
         // { HOME : null } then ${HOME} should be null.
-        val nullsMap = new java.util.HashMap[String, Object]
+        val nullsMap = new java.util.LinkedHashMap[String, Object]
         for (k <- substEnvVarObject.keySet().asScala) {
             val envVarName = k.replace("key_", "")
             nullsMap.put(envVarName, null)
@@ -833,7 +833,7 @@ class ConfigSubstitutionTest extends TestUtils {
     def fallbackToEnvWhenRelativized() {
         import scala.collection.JavaConverters._
 
-        val values = new java.util.HashMap[String, AbstractConfigValue]()
+        val values = new java.util.LinkedHashMap[String, AbstractConfigValue]()
 
         values.put("a", substEnvVarObject.relativized(new Path("a")))
 

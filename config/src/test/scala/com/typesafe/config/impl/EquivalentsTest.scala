@@ -9,7 +9,7 @@ import net.liftweb.{ json => lift }
 import java.io.Reader
 import java.io.StringReader
 import com.typesafe.config._
-import java.util.HashMap
+import java.util.LinkedHashMap
 import java.io.File
 import org.junit.runner.RunWith
 import org.junit.runners.AllTests

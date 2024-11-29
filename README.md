@@ -1,3 +1,6 @@
+This fork aims to change the behaviour when writing configurations to support non-alphabetically ordered fields. 
+In this case, it will always follow insertion order. The order of the keys in the `Config` object is the same as the order in the file.
+
 # Configuration library for JVM languages.
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.typesafe/config/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.typesafe/config)

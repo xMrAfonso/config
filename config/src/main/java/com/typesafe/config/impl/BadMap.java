@@ -1,7 +1,7 @@
 package com.typesafe.config.impl;
 
 /**
- * A terrible Map that isn't as expensive as HashMap to copy and
+ * A terrible Map that isn't as expensive as LinkedHashMap to copy and
  * add one item to. Please write something real if you see this
  * and get cranky.
  */

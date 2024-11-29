@@ -171,7 +171,7 @@ class ConfigValueTest extends TestUtils {
     }
 
     private def configMap(pairs: (String, Int)*): java.util.Map[String, AbstractConfigValue] = {
-        val m = new java.util.HashMap[String, AbstractConfigValue]()
+        val m = new java.util.LinkedHashMap[String, AbstractConfigValue]()
         for (p <- pairs) {
             m.put(p._1, intValue(p._2))
         }
@@ -622,7 +622,7 @@ class ConfigValueTest extends TestUtils {
     @Test
     def mergeOriginsWorks() {
         def o(desc: String, empty: Boolean) = {
-            val values = new java.util.HashMap[String, AbstractConfigValue]()
+            val values = new java.util.LinkedHashMap[String, AbstractConfigValue]()
             if (!empty)
                 values.put("hello", intValue(37))
             new SimpleConfigObject(SimpleConfigOrigin.newSimple(desc), values)

@@ -55,7 +55,7 @@ class JsonTest extends TestUtils {
 
         liftValue match {
             case lift.JObject(fields) =>
-                val m = new util.HashMap[String, AbstractConfigValue]()
+                val m = new util.LinkedHashMap[String, AbstractConfigValue]()
                 fields.foreach({ field => m.put(field.name, fromLift(field.value)) })
                 new SimpleConfigObject(fakeOrigin(), m)
             case lift.JArray(values) =>
