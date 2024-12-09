@@ -1,5 +1,10 @@
-This fork aims to change the behaviour when writing configurations to support non-alphabetically ordered fields. 
-In this case, it will always follow insertion order. The order of the keys in the `Config` object is the same as the order in the file.
+This fork aims to change some of the behaviour when writing configurations to support non-alphabetically ordered fields and other niche things for my specific use case. 
+In this case:
+- it will always follow insertion order, the order of the keys in the `Config` object is the same as the order in the file.
+- it will replace `key=value` formatting to `key = value` to look nicer.
+- it will __NOT__ render keys with null values.
+
+
 
 # Configuration library for JVM languages.
 
