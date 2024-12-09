@@ -491,6 +491,10 @@ final class SimpleConfigObject extends AbstractConfigObject implements Serializa
                 String k = entry.getKey();
                 AbstractConfigValue v = entry.getValue();
 
+                if (v == null || v.unwrapped() == null) {
+                    continue;
+                }
+
                 if (options.getOriginComments()) {
                     String[] lines = v.origin().description().split("\n");
                     for (String l : lines) {
