@@ -3,6 +3,7 @@ In this case:
 - it will always follow insertion order.
 - it will replace `key=value` formatting to `key = value` to look nicer.
 - it will __NOT__ render keys with null values.
+- it will make string values always be quoted for consistency.
 
 
 
