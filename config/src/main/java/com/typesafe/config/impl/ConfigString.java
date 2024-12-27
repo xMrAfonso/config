@@ -84,10 +84,7 @@ abstract class ConfigString extends AbstractConfigValue implements Serializable 
             appendHiddenEnvVariableValue(sb);
         } else {
             String rendered;
-            if (options.getJson())
-                rendered = ConfigImplUtil.renderJsonString(value);
-            else
-                rendered = ConfigImplUtil.renderStringUnquotedIfPossible(value);
+            rendered = ConfigImplUtil.renderJsonString(value);
             sb.append(rendered);
         }
     }
